@@ -19,7 +19,7 @@ import java.io.*;
 public abstract class BaseTokenizer extends Tokenizer {
 
     private TokenizerOptions options;
-    private static Logger logger = null;
+    // private static Logger logger = null;
 
     private static JasoDecomposer decomposer;
 
@@ -36,7 +36,7 @@ public abstract class BaseTokenizer extends Tokenizer {
     protected BaseTokenizer(TokenizerOptions options) {
         this.options = options;
 
-        logger = ESLoggerFactory.getLogger(options.getName());
+        // logger = ESLoggerFactory.getLogger(options.getName());
         termAtt = addAttribute(CharTermAttribute.class);
         offsetAtt = addAttribute(OffsetAttribute.class);
 
@@ -154,7 +154,7 @@ public abstract class BaseTokenizer extends Tokenizer {
         } catch (Exception e) {
             StringWriter errors = new StringWriter();
             e.printStackTrace(new PrintWriter(errors));
-            logger.error(errors.toString());
+            // logger.error(errors.toString());
         } finally {
         }
 
